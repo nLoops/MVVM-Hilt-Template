@@ -43,6 +43,15 @@ dependencies {
     implementation Libs.retrofit
     implementation Libs.retrofitConverter
     implementation Libs.gson
+    implementation Libs.interceptor
+    implementation Libs.okhttp
+
+    //coroutines
+    implementation Libs.coroutinesCore
+    implementation Libs.coroutinesCommon
+    implementation Libs.coroutinesLifeCycle
+    implementation Libs.coroutinesViewModel
+    implementation Libs.coroutinesLiveData
 
 
     testImplementation 'junit:junit:4.+'
