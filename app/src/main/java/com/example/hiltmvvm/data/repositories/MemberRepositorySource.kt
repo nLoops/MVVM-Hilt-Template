@@ -1,9 +1,8 @@
-package com.example.hiltmvvm.data.remote
+package com.example.hiltmvvm.data.repositories
 
 import com.example.hiltmvvm.data.Result
 import com.example.hiltmvvm.data.models.MemberList
 
-// Remote data source contract
-interface RemoteDataSource {
+interface MemberRepositorySource {
     suspend fun getMembers(): Result<MemberList>
 }

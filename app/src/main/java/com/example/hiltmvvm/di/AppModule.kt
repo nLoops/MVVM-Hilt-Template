@@ -1,12 +1,15 @@
 package com.example.hiltmvvm.di
 
 import android.content.Context
+import android.media.MediaDataSource
 import com.example.hiltmvvm.data.local.LocalData
 import com.example.hiltmvvm.data.local.LocalDataSource
 import com.example.hiltmvvm.data.local.db.AppDatabase
 import com.example.hiltmvvm.data.remote.APIClient
 import com.example.hiltmvvm.data.remote.RemoteData
 import com.example.hiltmvvm.data.remote.RemoteDataSource
+import com.example.hiltmvvm.data.repositories.MemberRepository
+import com.example.hiltmvvm.data.repositories.MemberRepositorySource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -41,4 +44,11 @@ class AppModule {
     @Singleton
     @Provides
     fun provideLocalDataSource(database: AppDatabase): LocalDataSource = LocalData(database)
+
+    @Singleton
+    @Provides
+    fun provideMemberRepository(
+            localData: LocalData,
+            remoteData: RemoteData
+    ): MemberRepositorySource = MemberRepository(localData, remoteData)
 }
