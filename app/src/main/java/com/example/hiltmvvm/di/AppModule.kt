@@ -51,4 +51,9 @@ class AppModule {
             localData: LocalData,
             remoteData: RemoteData
     ): MemberRepositorySource = MemberRepository(localData, remoteData)
+
+
+    // TODO provide [Coroutines.Dispatchers] to be shared across the global and used by [WorkManager]
+    // TODO provide [Analytical Delegator] to record all app actions
+    // TODO provide [PrefStorage] for app theming [Light, Dark] and the user settings
 }
